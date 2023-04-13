@@ -1,15 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace TestArray
 {
-	internal class Program
+	public static class Program
 	{
-		static void Main(string[] args)
+		private const int NumbersCount = 20;
+		private static readonly Random Random = new();
+
+		public static void Main()
 		{
+			var array = Enumerable.Range(0, NumbersCount).Select(_ => Random.Next(10)).ToArray();
+
+			array = array.OrderBy(x => x).ToArray();
 		}
 	}
 }
