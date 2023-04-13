@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using TestArray.Extensions;
 
 namespace TestArray
 {
@@ -18,7 +19,7 @@ namespace TestArray
 
 			array = array.OrderBy(x => x).ToArray();
 
-			Console.WriteLine(string.Join(", ", array));
+			array.Select((value, index) => $"{index}: {value}").ForEach(Console.WriteLine);
 
 			Console.ReadKey();
 		}
