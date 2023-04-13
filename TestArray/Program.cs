@@ -26,7 +26,7 @@ namespace TestArray
 
 			array = array.OrderBy(x => x.Number).ToArray();
 
-			array.Select((value, index) => $"{index,2}: {i.Number,2} - {i.Value}").ForEach(Console.WriteLine);
+			array.Select((i, index) => $"{index,2}: {i.Number,2} - {i.Value}").ForEach(Console.WriteLine);
 
 			Console.ReadKey();
 		}
