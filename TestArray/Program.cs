@@ -19,7 +19,7 @@ namespace TestArray
 
 			array = array.OrderBy(x => x).ToArray();
 
-			array.Select((value, index) => $"{index}: {value}").ForEach(Console.WriteLine);
+			array.Select((value, index) => $"{index,2}: {value,2}").ForEach(Console.WriteLine);
 
 			Console.ReadKey();
 		}
