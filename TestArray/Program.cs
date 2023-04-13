@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using TestArray.Entities;
 
 namespace TestArray
 {
@@ -10,11 +11,13 @@ namespace TestArray
 
 		public static void Main()
 		{
-			var array = Enumerable.Range(0, NumbersCount).Select(_ => Random.Next(10)).ToArray();
+			var array = Enumerable.Range(0, NumbersCount)
+				.Select(_ => new Item { Number = Random.Next(10) })
+				.ToArray();
 
-			array = array.OrderBy(x => x).ToArray();
+			array = array.OrderBy(x => x.Number).ToArray();
 
-			Console.WriteLine(string.Join(", ", array));
+			Console.WriteLine(string.Join(", ", array.Select(i => $"{i.Number} - {i.Value}")));
 
 			Console.ReadKey();
 		}
