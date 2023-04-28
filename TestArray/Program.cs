@@ -7,7 +7,7 @@ namespace TestArray
 {
 	public static class Program
 	{
-		private const int NumbersCount = 20;
+		private const int NumbersCount = 30;
 		private const int NumbersStart = 0;
 		private const int NumbersEnd = 99;
 		private const int ValueLengthStart = 1;
